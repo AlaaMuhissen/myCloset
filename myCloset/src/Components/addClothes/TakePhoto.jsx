@@ -21,7 +21,7 @@ export default function TakePhoto() {
 
   return (
     <>
-      <h1>Hii</h1>
+      <h1>Hii,,</h1>
       <div className="container">
         {imgSrc ? (
           <img src={imgSrc} alt="webcam" />
