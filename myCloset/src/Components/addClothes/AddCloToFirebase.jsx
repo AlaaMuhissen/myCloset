@@ -1,5 +1,5 @@
 import { getDownloadURL,  ref as storageRef, uploadBytes} from "firebase/storage";
-import { storage,db ,auth } from "../../config/firebase";
+import { storage,auth } from "../../config/firebase";
   
   export default function AddCloToFirebase({img}) {
     if (img === null) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { auth } from '../../config/firebase';
-import { signInWithPopup, GoogleAuthProvider, linkWithPopup } from 'firebase/auth';
+import { signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
+import { FaGoogle } from "react-icons/fa";
 
 export default function LoginWithGmail() {
   const provider = new GoogleAuthProvider();
@@ -18,20 +19,9 @@ export default function LoginWithGmail() {
       });
   };
 
-  const linkWithEmail = async () => {
-    try {
-      const result = await linkWithPopup(auth.currentUser, provider);
-      // The user has been linked with Google provider
-      console.log('Account linked with email/password:', result.user);
-    } catch (error) {
-      console.error('Error linking with email/password:', error);
-    }
-  };
-
   return (
     <div>
-      <button onClick={signIn}>Google</button>
-      <button onClick={linkWithEmail}>Link with Email/Password</button>
+      <button onClick={signIn}><FaGoogle color='#704F38' size={"25px"}/></button>  
     </div>
   );
 }

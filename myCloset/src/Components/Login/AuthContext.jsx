@@ -17,23 +17,18 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // Update user information in the context when authentication state changes
         updateUser({
           uid: user.uid,
           email: user.email,
-          // Add other relevant user information
         });
       } else {
-        // No user is signed in
         updateUser(null);
       }
-
-      // Set loading to false once authentication state is determined
       setLoading(false);
     });
 
     return () => unsubscribe();
-  }, [updateUser]);
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, updateUser, loading }}>
