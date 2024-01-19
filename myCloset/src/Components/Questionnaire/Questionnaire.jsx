@@ -103,11 +103,11 @@ const Questionnaire = ({img}) => {
 
   return (
     <>
-    <div className="flex flex-col items-center justify-center overflow-y-auto ">
-  <form className="bg-white p-8 rounded-md shadow-md max-w-md mb-4 overflow-y-auto">
+<div className="flex flex-col items-center justify-center overflow-y-auto h-screen p-4 md:p-8 lg:p-10">
+  <form className="bg-white p-4 md:p-8 lg:p-10 rounded-md shadow-md max-w-md w-full mb-4 overflow-y-auto">
 
     {img && (
-      <div className="mb-8">
+      <div className="mb-4 md:mb-8">
         <img
           className="w-full h-auto rounded-md shadow-md"
           src={img}
@@ -117,8 +117,8 @@ const Questionnaire = ({img}) => {
     )}
 
     <section id="firstSec" className="mb-4">
-        <div className="mb-4 font-bold">In which season/s do you prefer to wear this item?</div>
-      <div className="flex items-center">
+      <div className="mb-4 font-bold">In which season/s do you prefer to wear this item?</div>
+      <div className="flex items-center flex-wrap">
         {seasons.map((season, index) => (
           <Form.Check
             inline
@@ -138,20 +138,21 @@ const Questionnaire = ({img}) => {
     <div id="secondSec" className="mb-4">
       <RangeInput onFinalValueChange={handleFinalValue} />
     </div>
-    <div id="thirdSec" className=" flex flex-row mb-4 justify-around">
-      <div >
-      <RadioInput
-        option1="With Hat"
-        option2="Without Hat"
-        onRadioValChange={handleHatChange}
-      />
+    
+    <div id="thirdSec" className="flex flex-col mb-4 md:flex-row md:justify-between">
+      <div className="mb-4 md:mb-0">
+        <RadioInput
+          option1="With Hat"
+          option2="Without Hat"
+          onRadioValChange={handleHatChange}
+        />
       </div>
       <div>
-      <RadioInput
-        option1="Waterproof"
-        option2="Non Waterproof"
-        onRadioValChange={handleWaterproofChange}
-      />
+        <RadioInput
+          option1="Waterproof"
+          option2="Non Waterproof"
+          onRadioValChange={handleWaterproofChange}
+        />
       </div>
     </div>
 
@@ -170,9 +171,10 @@ const Questionnaire = ({img}) => {
     >
       Submit
     </button>
-    {loading ? <LoadingComponent /> : null} 
+    {loading ? <LoadingComponent /> : null}
   </form>
 </div>
+
 
     </>
     
