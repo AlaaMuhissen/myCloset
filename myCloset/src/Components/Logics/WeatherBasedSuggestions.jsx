@@ -6,7 +6,6 @@ const WeatherBasedSuggestions = ({ temperature, isRainy, windSpeed, chanceOfRain
   const suggestClothing = () => {
     const newSuggestions = [];
 
-    // Define your suggestion logic based on the form details
     if (temperature > 25) {
       newSuggestions.push('T-shirts', 'Shorts', 'Sunglasses');
     } else if (temperature < 10) {

@@ -9,7 +9,7 @@ const ButtonSelect = ({ options, onSelect }) => {
   };
 
   return (
-    <div className="flex flex-wrap mb-4 gap-2 "> {/* Add Tailwind CSS classes to the container */}
+    <div className="flex flex-wrap mb-4 gap-2 "> 
     {options.map((option) => (
       <button
         key={option.label}

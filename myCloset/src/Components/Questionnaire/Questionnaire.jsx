@@ -75,13 +75,14 @@ const Questionnaire = ({img}) => {
   
       await addDoc(imagesCollection, imageInfo);
       updateSubCategory(selectedMainOption, selectedSubOption,imageInfo);
+      
   
     } catch (error) {
       alert("You have to fill all the form!!");
       console.error("Error submitting response:", error);
     }finally {
       setLoading(false);
-      navigate(`dashboard/${selectedMainOption.label}`)
+      navigate(`/dashboard/${selectedMainOption.label}`)
     }
   };
   
