@@ -72,5 +72,5 @@ export const getIconComponent = (iconString , size ,color) => {
 };
   
     const IconComponent = iconMap[iconString];
-    return IconComponent ? <IconComponent color={color} size={`${size}px`}/> : null;
+    return IconComponent ? <IconComponent color={color} size={`${size}`}/> : null;
   };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { getAllCategories } from './SaveDataInLocalStorage';
 
 export function chooseClothes() {

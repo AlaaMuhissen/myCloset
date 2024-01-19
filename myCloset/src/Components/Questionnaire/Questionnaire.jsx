@@ -39,12 +39,10 @@ const Questionnaire = ({img}) => {
   };
  
   const submitResponse = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
   
     try {
       setLoading(true);
-      // Upload image to Firebase Storage
-       // Decode Base64 string to binary data
     const binaryData = atob(img.split(',')[1]);
 
     // Create a Uint8Array from the binary data
@@ -56,13 +54,12 @@ const Questionnaire = ({img}) => {
     // Create a Blob from the Uint8Array
     const blob = new Blob([uint8Array], { type: 'image/png' });
 
-    // Upload the Blob to Firebase Storage
     const storageRef = ref(storage);
     const imageRef = ref(storageRef, `${selectedMainOption.label}/${selectedSubOption.label}/${Date.now()}`);
     const snapshot = await uploadBytes(imageRef, blob);
     const downloadURL = await getDownloadURL(snapshot.ref);
   
-      // Store additional information in Firebase Database
+    
       const imagesCollection = collection(db,`${userId}/${selectedMainOption.label}/${selectedSubOption.label}`);
       const imageInfo = {
         seasons: selectedSeasons,

@@ -27,7 +27,7 @@ export default function GetWeather() {
 
   return (
     <>
-    <div className="">
+    <div className="mb-5">
       {loading && <LoadingComponent />}
       {error && <p>{error}</p>}
       {weatherData 

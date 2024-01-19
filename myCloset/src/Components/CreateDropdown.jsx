@@ -28,7 +28,7 @@ import { Link } from 'react-router-dom';
             <ul>
             <Link to="/addClothe"><li className="py-2 px-4 max-sm: hover:bg-gray-200">
               <BiCloset/>{item1}</li></Link>
-            <Link to="/dashboard/Tops"><li className="py-2 px-4 hover:bg-gray-200"><GiClothes/>{item2}</li></Link>
+            <Link to="/addAnOutfit"><li className="py-2 px-4 hover:bg-gray-200"><GiClothes/>{item2}</li></Link>
             </ul>
           </div>
         )}

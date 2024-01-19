@@ -9,15 +9,15 @@ import LoginPage from './Pages/LoginPage'
 import DashboardPage from './Pages/DashboardPage'
 import DisplaySubCategory from './Pages/DisplaySubCategory'
 import AddClothesPage from './Pages/AddClothesPage'
+import CreateAnOutfit from './Pages/CreateAnOutfit'
+import OutfitsPage from './Pages/OutfitsPage'
 
 function App() {
  
 
   return (
     <>
-    <div
-     className='pt-20 pr-10 pl-10 bg-[#f5f5f4] h-full'
-    >
+   
     <BrowserRouter>
       <AuthProvider>
         <Routes>
@@ -25,10 +25,12 @@ function App() {
           <Route path='/dashboard' element={<DashboardPage/>}/>
           <Route path='/dashboard/:subCategory' element={<DisplaySubCategory/>} />
           <Route path='/addClothe'  element={<AddClothesPage/>}/>
+          <Route path='/addAnOutfit'  element={<CreateAnOutfit/>}/>
+          <Route path='/outfits'  element={<OutfitsPage/>}/>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
-    </div>
+
     </>
   )
 }
